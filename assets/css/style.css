@@ -3,6 +3,7 @@
 *{
     margin: 0%;
     padding: 0%;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -146,4 +147,28 @@ footer section div a{
 
 i{
     padding: 5px;
+}
+
+/*tablet*/
+@media (max-width:1200px){
+    body{
+        grid-template-areas: 
+        "header"
+        "menu"
+        "main"
+        "footer";
+        grid-template-columns: 1fr;
+    }
+    header{
+        height: 5em;
+        align-items: center;
+    }
+    body menu img{
+        width: 200px;
+    }
+    main{
+        margin: 100px;
+        grid-template-columns: repeat(2,1fr);
+        gap:80px 80px;
+    }
 }
