@@ -150,7 +150,7 @@ i{
 }
 
 /*tablet*/
-@media (max-width:1200px){
+@media (min-width:765px) and (max-width:1200px){
     body{
         grid-template-areas: 
         "header"
@@ -170,5 +170,37 @@ i{
         margin: 100px;
         grid-template-columns: repeat(2,1fr);
         gap:80px 80px;
+    }
+}
+
+/*mobile*/
+@media (min-width:300px) and (max-width:765px){
+    body{
+        grid-template-areas: 
+        "header"
+        "menu"
+        "main"
+        "footer";
+        grid-template-columns: 1fr;
+    }
+    header{
+        height: 5em;
+        align-items: center;
+    }
+    body menu img{
+        width: 200px;
+    }
+    main{
+        margin-bottom: 50px;
+        margin-top: 50px;
+        grid-template-columns: repeat(1,1fr);
+        gap:80px 80px;
+    }
+    .img{
+        width: 200px;
+        border-radius: 200px;
+    }
+    footer{
+        width: 100vw !important;
     }
 }
