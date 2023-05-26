@@ -12,6 +12,7 @@ body{
     "header header"
     "menu main"
     "footer footer";
+    grid-template-columns: 1fr 4fr;
 }
 
 header{
@@ -49,7 +50,6 @@ header h1{
 }
 
 menu{
-    width: 25%;
     background-color: #f1f1f1;
     padding: 3em;
     grid-area: menu;
@@ -86,13 +86,45 @@ menu img{
 
 main{
     grid-area: main;
-    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 10px 10px;
+    
 }
 
-footer{
+.img{
+    width: 300px;
+    filter: grayscale(1);
+    border-radius: 300px;
+    transition: filter 3s, transform 1s, border-radius 0.5s;
+}
+
+.img:hover{
+    border-radius: 0;
+    transform: scale(1.5);
+    filter: grayscale(0);
+}
+
+.card{
+    width: auto;
+}
+
+#footer{
+    grid-area: footer;
+}
+
+footer section div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1em;
+}
+
+footer section{
     color: aqua;
     margin: 1px;
-    grid-area: footer;
     background-color: #7b238b;
     display: flex;
     justify-content: space-evenly;
@@ -100,16 +132,16 @@ footer{
     height: 5em;
 }
 
-footer div{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 1em;
-}
-
-footer div a{
+footer section div a{
     color: aqua;
     text-decoration: none;
+}
+
+.ad{
+    color: aqua;
+    background-color: #7b238b;
+    text-align: center;
+    padding: 1em;
 }
 
 i{
