@@ -7,9 +7,15 @@
 
 body{
     font-family: 'Roboto', sans-serif;
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "menu main"
+    "footer footer";
 }
 
 header{
+    grid-area: header;
     display: flex;
     justify-content: center;
     background-color: black;
@@ -19,9 +25,51 @@ header{
 
 header h1{
     color: yellow;
-    animation: quake 1s linear  infinite forwards;
+    animation: rbow 1s linear  infinite forwards alternate;
     font-size: 2.5em;
     font-style: italic;
+}
+
+@keyframes rbow{
+    0%{
+        color: yellow;
+    }
+    25%{
+        color: green
+    }
+    50%{
+        color: blue;
+    }
+    75%{
+        color:red;
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
+
+menu{
+    width: 25%;
+    height: 100%;
+    background-color: #f1f1f1;
+    padding: 3em;
+    grid-area: menu;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 3;
+    gap: 1em;
+}
+
+menu a{
+    color: black;
+    font-size: 1.2em;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+menu img{
+    width: 50%;
+    animation: quake 3s linear  infinite forwards;
 }
 
 @keyframes quake{
@@ -29,10 +77,19 @@ header h1{
         transform:translateX(0);
     }
     25%{
-        transform:translateX(-100px);
+        transform:translateX(1em);
     }
     50%{
         transform:translateX(0);
     }
-    75%{transform:translateX(100px);}
+    75%{transform:translateX(1em);}
+}
+
+
+main{
+    grid-area: main;
+}
+
+footer{
+    grid-area: footer;
 }
