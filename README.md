@@ -1,4 +1,4 @@
-# Exam
+# Exam CSS
 in this repository i will update a proyect of html and css that is made for the exam of a module of css in my academy, the requirements are:
 
 A side menu containing links to different sections of the page, using
